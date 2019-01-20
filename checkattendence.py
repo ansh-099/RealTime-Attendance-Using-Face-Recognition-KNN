@@ -3,9 +3,16 @@ from datetime import datetime
 # Current date time in local system
 date = datetime.now().date()
 date = str(date)
-fileName = str("presentPeople"+date+".txt")
 print("Check Attendence of "+date)
-f=open(fileName, "r")
+enterDate = input("Enter date in format shown above: ")
+fileName = str("presentPeople"+enterDate+".txt")
+
+
+try:
+    f=open(fileName, "r")
+except FileNotFoundError:
+    print("No One Present On This Date")
+    
 presenties = {}
 
 
