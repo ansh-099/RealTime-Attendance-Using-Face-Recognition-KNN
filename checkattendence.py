@@ -3,7 +3,7 @@ from datetime import datetime
 # Current date time in local system
 date = datetime.now().date()
 date = str(date)
-print("Check Attendence of "+date)
+print("Todays Date:",date)
 enterDate = input("Enter date in format shown above: ")
 fileName = str("presentPeople"+enterDate+".txt")
 
@@ -21,7 +21,7 @@ for line in f:
            presenties[name] = 'p'  
 
 
-print(presenties)
+print("Presenties on ",enterDate,":",presenties)
 
 
 name = input("Enter name to check: ")
