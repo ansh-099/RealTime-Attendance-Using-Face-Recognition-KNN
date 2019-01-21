@@ -7,7 +7,7 @@ Then finally to check who was present use checkattendence.py , it will display t
 
 <img width="1440" alt="screenshot 2019-01-21 at 11 05 38 am" src="https://user-images.githubusercontent.com/35291991/51454871-f5431b00-1d6c-11e9-8edf-5080ef4382fe.png">
 
-### Features Provided-
+### Features -
 * Adding New Member To Attendence List. </br>
 * Taking Attendence Using RealTime Face Recognition. </br>
 * Finally, Check Attendence On any Particular Date for any Particular Person. </br>
