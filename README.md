@@ -1,7 +1,7 @@
 #  RealTime-Attendence-Using-Face-Recognition
 
 
-Use NewEntry.py to add new member, and use TakeAttendence.py to take attendence , it will open camera and detect face and mark accordingly in a file names according to date.
+Use NewEntry.py to add new member, and use TakeAttendence.py to take attendence , it will open camera and detect face and mark accordingly in a files ,named according to the date.
 </br>
 Then finally to check who was present use checkattendence.py , it will display that date, all people present on that date and you can get for a particular persons status by entering that persons name.
 
