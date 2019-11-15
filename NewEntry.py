@@ -3,12 +3,11 @@ import numpy as np
 import time
 
 data = []
-name = input("Enter Name - ")
+name = input("Enter Name(Only First Name) - ")
 no_of_pics = int(input("Enter No Of Pics - "))
 capture = cv2.VideoCapture(0)
 
 
-		
 
 face_cascade = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
 

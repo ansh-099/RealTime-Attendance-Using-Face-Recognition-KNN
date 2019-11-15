@@ -9,6 +9,24 @@ from datetime import datetime
 # Current date time in local system
 date = datetime.now().date()
 date = str(date)
+print(date)
+currentAdds = []
+
+fileName = str("presentPeople"+date+".txt")
+# f = open(fileName, 'w')
+# f.close
+
+with open(fileName) as f:
+    content = f.readlines()
+
+content = [x.strip() for x in content]
+if len(content) == 0:
+	presenties = []
+else:
+	presenties = content[0].split()
+	presenties = [x.lower() for x in presenties]
+print("All people",presenties)
+
 
 files = [f for f in os.listdir('dataset') if f.endswith('.npy')]
 names = [f[:-4] for f in files]
@@ -68,17 +86,19 @@ while True:
 			present.append(prediction[0])
 		past = prediction[0]
 
-	cv2.imshow("Attendence for "+date,image)
+	cv2.imshow("Attendence for "+date+" (Press q to Quit)",image)
 	key = cv2.waitKey(1)
 	if key & 0xFF == ord('q'):
 		break
 print("pres" ,present)
-fileName = str("presentPeople"+date+".txt")
-# f = open(fileName, 'w')
-# f.close
+
 f=open(fileName, "a+")
+
 for value in present:
-	f.write(value+ " ")
+	if not value.lower() in presenties:
+		if not value.lower() in currentAdds:	
+			f.write(value.lower()+ " ")
+			currentAdds.append(value.lower())
 f.close()
 
 

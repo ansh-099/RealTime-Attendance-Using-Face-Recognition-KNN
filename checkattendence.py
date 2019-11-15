@@ -4,34 +4,40 @@ from datetime import datetime
 date = datetime.now().date()
 date = str(date)
 print("Todays Date:",date)
-enterDate = input("Enter date in format shown above: ")
+enterDate = input("Enter date in format shown above ({0}):".format(date))
+if(enterDate == ""):
+    enterDate = date
+
 fileName = str("presentPeople"+enterDate+".txt")
 
 
-try:
-    f=open(fileName, "r")
-except FileNotFoundError:
-    print("No One Present On This Date")
+
+# try:
+#     fd=open(fileName, "r")
+# except FileNotFoundError:
+#     print("No One Present On This Date")
     
-presenties = {}
+with open(fileName) as f:
+    content = f.readlines()
+
+content = [x.strip() for x in content] 
+
+presenties = content[0].split()
+presenties = [x.lower() for x in presenties]
 
 
-for line in f:
-        for name in line.split():
-           presenties[name] = 'p'  
 
+print('\n'"Presenties on ",enterDate,":"'\n\n',presenties,'\n')
 
-print("Presenties on ",enterDate,":",presenties)
+val = 'y'
+while(val == 'y' or val == 'Y'):
+    name = input("Enter name to check: ").lower()
 
-
-name = input("Enter name to check: ")
-try:
-    value = presenties[name]
-    print("Present")
-except KeyError:
-    # Key is not present
-    print("Absent")
-
+    if name in presenties:
+        print("Present"'\n')
+    else:
+        print("Absent"'\n')
+    val = input("Want to check for someone else? (Y/n)")
 
 
 
