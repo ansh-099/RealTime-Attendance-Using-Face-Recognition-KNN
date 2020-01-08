@@ -16,8 +16,13 @@ fileName = str("presentPeople"+date+".txt")
 # f = open(fileName, 'w')
 # f.close
 
-with open(fileName) as f:
-    content = f.readlines()
+try:
+	with open(fileName) as f:
+		content = f.readlines()
+except FileNotFoundError:
+	content = []
+
+
 
 content = [x.strip() for x in content]
 if len(content) == 0:
