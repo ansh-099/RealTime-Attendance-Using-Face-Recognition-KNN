@@ -1,4 +1,4 @@
-#  RealTime-Attendence-Using-Face-Recognition
+#  RealTime-Attendance-Using-Face-Recognition-KNN
 
 
 Use NewEntry.py to add new member, and use TakeAttendence.py to take attendence , it will open camera and detect face and mark accordingly in a files ,named according to the date.
